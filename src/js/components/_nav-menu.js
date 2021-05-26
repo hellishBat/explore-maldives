@@ -32,7 +32,7 @@ navBtn.addEventListener('click', () => {
 });
 
 
-for (i=0; i < navLinks.length; ++i) {
+for (i = 0; i < navLinks.length; ++i) {
   navLinks[i].addEventListener('click', () => {
     closeNav();
   });

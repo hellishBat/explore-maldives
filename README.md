@@ -1,7 +1,7 @@
-# Gulp + Webpack Advanced Starter (Pug Edition)
+# Gulp + Webpack Starter
 
 ## Some features
-- Pug preprocessor
+- HTML blocks
 - SASS(SCSS) preprocessor
 - Webpack for building ES Modules
 - Babel transpiller to support modern JavaScript (ES6) in browsers

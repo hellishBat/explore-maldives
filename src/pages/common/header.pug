@@ -1,0 +1,42 @@
+<!-- Header -->
+header.header
+  .container
+    .header__row.header__row--top.d-f.jc-sb.ai-c
+      a.header__weather(href='#')
+        svg.header__weather-icon
+          title
+            | Sunny
+          use(xlink:href='images/sprite.svg#weather-sunny')
+        span.header__weather-temp 23° C
+        |  - 
+        span.header__weather-date MAR 12TH, 2017
+      a.header__btn.btn.btn--ghost(href='#')
+        | Get a quote
+  .header__row.header__row--bottom
+    .container
+      .header__title
+        | Explore Maldives
+  .header__menu.js-header-menu
+    .container
+      button.header__menu-btn.js-nav-btn
+        span.header__line
+        span.header__line
+        span.header__line
+      nav.header__nav.nav.js-nav-menu
+        ul.header__list.d-f
+          li.header__item
+            a.header__link(href='#')
+              | Home
+          li.header__item
+            a.header__link(href='#')
+              | About
+          li.header__item
+            a.header__link(href='#')
+              | Events
+          li.header__item
+            a.header__link(href='#')
+              | Blog
+          li.header__item
+            a.header__link(href='#')
+              | Contact
+<!-- /Header -->

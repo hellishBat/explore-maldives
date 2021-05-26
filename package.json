@@ -53,6 +53,8 @@
     "yargs": "^16.2.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "aos": "^2.3.4",
+    "normalize.css": "^8.0.1",
+    "swiper": "^6.6.1"
   }
 }

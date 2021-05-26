@@ -1,0 +1,182 @@
+// About
+.about {
+  &__row {
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 95px;
+    }
+  }
+
+  &__col {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &--left {
+      width: calc(44% - 30px);
+    }
+
+    &--right {
+      width: 56%;
+      padding-top: 5%;
+    }
+
+    &--wide {
+      width: 58%;
+    }
+
+    &--small {
+      width: 37%;
+    }
+  }
+
+  &__subcol {
+    &--text {
+      margin-top: auto;
+      padding-left: 22%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 95px;
+    }
+  }
+
+  &__header {
+    @include respond(min-sm) {
+      margin-right: calc((100vw - var(--container-mxw)) / -2);
+    }
+  }
+
+  &__heading {
+    max-width: 533px;
+    margin-bottom: 12.23%;
+  }
+
+  &__pic {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-right: var(--gap);
+    }
+
+    @include respond(min-md) {
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__img {
+    transition: transform 0.5s ease 0s;
+  }
+
+  &__text-container {
+    padding-top: 4.5%;
+    padding-right: 10%;
+  }
+
+  &__link {
+    position: relative;
+    margin-left: auto;
+    padding-right: 24px;
+    font-weight: 500;
+    color: $primary-accent;
+    text-transform: uppercase;
+    transition: color 0.3s ease 0s;
+
+    &:hover {
+      color: $hover-text;
+    }
+  }
+
+  &__link-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+  }
+
+  @include respond(max-md) {
+    & {
+      padding-top: 60px;
+    }
+
+    &__text-container {
+      padding-right: 0;
+    }
+  }
+
+  @include respond(max-sm) {
+    &__row {
+      flex-wrap: wrap;
+
+      &--bottom {
+        flex-direction: column-reverse;
+      }
+
+      &:not(:last-child) {
+        margin: 0 0 60px;
+      }
+    }
+
+    &__col {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      &--left {
+        margin-bottom: var(--gap);
+      }
+
+      &--right {
+        flex-direction: column-reverse;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    &__header {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__subcol {
+      padding: 0;
+
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+
+    &__text-container {
+      padding: 0;
+    }
+  }
+
+  @include respond(max-xs) {
+    & {
+      padding-bottom: 0;
+    }
+
+    &__col--wide {
+      flex-wrap: wrap;
+    }
+
+    &__subcol {
+      flex-wrap: wrap;
+    }
+
+    &__pic {
+      &:not(:last-child) {
+        margin: 0 0 var(--gap);
+      }
+    }
+  }
+}

@@ -1,17 +1,27 @@
 // Container properties
-$cont-width: 1140;
+$cont-width: 1170;
 $min-width: 320px;
 $max-width: $cont-width + 30;
 
 // Media breakpoints
-$media-lg: 1199.98;
+$media-lg: $max-width;
 $media-md: 991.98;
 $media-sm: 767.98;
 $media-xs: 575.98;
 
 // Fonts
-$default-font: sans-serif;
+$poppins: "Poppins", sans-serif;
+$default-font: $poppins;
 
 // Colours
 $white: #ffffff;
-$primary-accent: blue;
+$light-grey: #ededed;
+$medium-grey: #aab2bd;
+$dark-grey: #656d78;
+$light-graphite: #545454;
+$graphite: #333333;
+$black: #1a1d20;
+$yellow: #f0ea44;
+$primary-accent: #52dae6;
+$hover-accent: lighten($primary-accent, 20%);
+$hover-text: darken($primary-accent, 20%);

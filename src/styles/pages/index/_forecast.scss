@@ -1,0 +1,152 @@
+// Forecast
+.forecast {
+  background-color: $light-grey;
+  padding: 120px 0 95px;
+
+  &__inner {
+    justify-content: space-between;
+  }
+
+  &__heading {
+    max-width: 310px;
+  }
+
+  &__location {
+    padding-bottom: 23px;
+  }
+
+  &__link {
+    color: $medium-grey;
+
+    &--current {
+      position: relative;
+      padding-left: 23px;
+      color: $graphite;
+    }
+
+    @include respond(min-md) {
+      &:hover {
+        color: $hover-text;
+      }
+    }
+  }
+
+  &__location-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    transform: translateY(-50%);
+  }
+
+  &__col {
+    &--days {
+      width: 100%;
+      max-width: 780px;
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: 1fr auto;
+    }
+  }
+
+  &__weather {
+    padding: 8px 15px 15px;
+    transition: all 0.3s ease 0s;
+
+    &--current {
+      grid-row: 1 / span 2;
+    }
+
+    @include respond(min-md) {
+      &:hover {
+        & {
+          background-color: $hover-accent;
+          color: $hover-text;
+        }
+
+        .forecast__day,
+        .forecast__icon,
+        .forecast__temp {
+          color: $hover-text;
+        }
+      }
+    }
+  }
+
+  &__day {
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+
+    &--current {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    color: $dark-grey;
+
+    &--current {
+      margin-bottom: 32px;
+      width: 125px;
+      height: 125px;
+      color: $yellow;
+    }
+  }
+
+  &__temp {
+    color: $primary-accent;
+  }
+
+  &__day,
+  &__temp {
+    font-weight: 600;
+  }
+
+  &__link,
+  &__day,
+  &__icon,
+  &__temp {
+    transition: color 0.3s ease 0s;
+  }
+
+  &__location-link {
+    font-weight: 500;
+  }
+
+  &__location-link--current,
+  &__temp {
+    font-size: 16px;
+  }
+
+  @include respond(max-md) {
+    & {
+      padding: 60px 0;
+    }
+
+    &__inner {
+      flex-wrap: wrap;
+    }
+
+    &__col {
+      width: 100%;
+    }
+  }
+
+  @include respond(max-xs) {
+    &__inner {
+      justify-content: center;
+    }
+
+    &__col--days {
+      grid-template-columns: repeat(3, calc(100% / 3));
+      max-width: 320px;
+    }
+
+    &__weather--current {
+      grid-column: 1 / span 3;
+    }
+  }
+}
