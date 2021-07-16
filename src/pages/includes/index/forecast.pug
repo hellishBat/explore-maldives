@@ -2,8 +2,8 @@
 section.forecast.section
   .container
     .forecast__inner.d-f
-      .forecast__col.d-f.fd-c.jc-sb
-        .forecast__heading.section__heading(data-aos='fade-up' data-aos-delay='0' data-aos-offset='-700')
+      .forecast__col.d-f.fd-c.jc-sb(data-aos='fade-up' data-aos-delay='0' data-aos-offset='-700')
+        .forecast__heading.section__heading
           | Week Forecast
         ul.forecast__location
           li.forecast__location-item
@@ -15,7 +15,7 @@ section.forecast.section
           li.forecast__location-item
             a.forecast__link(href='#')
               | Switch to another city
-      .forecast__col.forecast__col--days.d-g
+      .forecast__col.forecast__col--days.d-g(data-aos='fade-left' data-aos-delay='800' data-aos-offset='-700')
         a.forecast__weather.forecast__weather--current.d-f.fd-c.ai-c.jc-sb(href='#')
           span.forecast__day.forecast__day--current
             | Today

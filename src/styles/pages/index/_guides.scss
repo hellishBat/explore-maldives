@@ -90,8 +90,11 @@
     padding: 7%;
     color: $light-grey;
     transform: translateY(100%);
-    opacity: 0;
     transition: all 0.5s ease 0s;
+
+    @include respond(min-md) {
+      opacity: 0;
+    }
   }
 
   &__pagination {
