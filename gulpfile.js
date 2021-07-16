@@ -26,6 +26,8 @@ const webpackConfig = require('./webpack.config.js');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const imagemin = require('gulp-imagemin');
+const recompress = require('imagemin-jpeg-recompress');
+const pngquant = require('imagemin-pngquant');
 const svgSprite = require('gulp-svg-sprite');
 const yargs = require('yargs');
 const gulpif = require('gulp-if');
@@ -52,7 +54,7 @@ const path = {
   },
   resources: {
     src: './src/resources/**',
-    dist: './dist/resources',
+    dist: './dist',
     watch: './src/resources/**',
   },
   fonts: {
@@ -229,27 +231,27 @@ const fontStyle = (done) => {
 const images = () => {
   return src(path.images.src)
     .pipe(newer(path.images.dist))
-    .pipe(imagemin([
-      imagemin.gifsicle({
-        interlaced: true
-      }),
-      imagemin.mozjpeg({
-        quality: 75,
-        progressive: true
-      }),
-      imagemin.optipng({
-        optimizationLevel: 5
-      }),
-      imagemin.svgo({
-        plugins: [{
-            removeViewBox: false
-          },
-          {
-            cleanupIDs: false
-          }
-        ]
-      })
-    ]))
+    .pipe(imagemin({
+        interlaced: true,
+        progressive: true,
+        optimizationLevel: 5,
+      },
+      [
+        recompress({
+          loops: 6,
+          min: 50,
+          max: 90,
+          quality: 'high',
+          use: [pngquant({
+            quality: [0.8, 1],
+            strip: true,
+            speed: 1
+          })],
+        }),
+        imagemin.gifsicle(),
+        imagemin.optipng(),
+        imagemin.svgo()
+      ], ), )
     .pipe(dest(path.images.dist))
 }
 

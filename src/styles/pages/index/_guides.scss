@@ -39,14 +39,21 @@
     transition: transform 0.5s ease 0s;
 
     &:hover {
+
       .guides__title,
       .guides__text {
         transform: translateY(0);
+      }
+
+      .guides__text {
+        opacity: 1;
       }
     }
   }
 
   &__body {
+    display: block;
+
     &::before {
       position: absolute;
       top: 0;
@@ -83,9 +90,10 @@
     padding: 7%;
     color: $light-grey;
     transform: translateY(100%);
-    transition: transform 0.5s ease 0s;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
   }
-  
+
   &__pagination {
     display: none;
   }

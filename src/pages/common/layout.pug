@@ -5,17 +5,15 @@ html(lang="en")
       meta(charset="UTF-8")
       meta(http-equiv="X-UA-Compatible" content="IE=edge")
       meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
-      title Explore Maldives
-      link(rel="icon" type="image/svg+xml" href="resources/favicon/favicon.svg")
+      title Explore Maldives | Your Essential Travel Guide
+      link(rel="icon" type="image/svg+xml" href="favicon/favicon.svg")
       link(rel="stylesheet" href="styles/main.css")
   body
-    .wrapper
-      main.page
-        block header
-          include header
-        block content 
-        block footer
-          include footer
-        block scripts
-          script(src="js/vendor.js" defer)
-          script(src="js/main.js" defer)
+    block header
+      include header
+    block content 
+    block footer
+      include footer
+    block scripts
+      script(src="js/vendors.js" defer)
+      script(src="js/main.js" defer)

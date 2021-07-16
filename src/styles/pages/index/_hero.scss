@@ -1,10 +1,6 @@
 // Hero
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: var(--vh);
-  // padding: 6rem 0;s
-  padding: 50px 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,17 +11,20 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(28deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     content: "";
   }
 
-  &__inner {
+  &__body {
     position: relative;
     flex: 1 1 100%;
     max-width: 400px;
+    min-height: 100vh;
+    min-height: var(--dynamic-vh);
+    padding-top: 34vh;
+    padding-bottom: 100px;
   }
 
   &__caption {
@@ -84,7 +83,8 @@
   }
 
   @include respond(max-md) {
-    &__inner {
+    &__body {
+      padding-top: 210px;
       max-width: 450px;
     }
 
@@ -100,17 +100,21 @@
   }
 
   @include respond(max-xs) {
-    &__inner {
+    & {
+      background-position: 78% 0;
+    }
+    &__body {
       max-width: 290px;
-      max-width: 320px;
+      padding-top: 150px;
+      padding-top: 25vh;
     }
 
     &__caption {
-      font-size: 22px;
+      font-size: 18px;
     }
 
     &__title {
-      font-size: 50px;
+      font-size: 45px;
     }
 
     &__text {

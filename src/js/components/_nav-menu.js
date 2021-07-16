@@ -17,7 +17,8 @@ export const toggleNav = () => {
   }
 }
 
-navBtn.addEventListener('click', () => {
+navBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
   toggleNav();
 });
 
@@ -26,3 +27,14 @@ for (let i = 0; i < navLinks.length; ++i) {
     toggleNav();
   });
 }
+
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  const itsNavMenu = target == navMenu || navMenu.contains(target);
+  const itsNavBtn = target == navBtn;
+  const menuIsActive = navMenu.classList.contains('active');
+
+  if (!itsNavMenu && !itsNavBtn && menuIsActive) {
+    toggleNav();
+  }
+});

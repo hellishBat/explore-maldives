@@ -1,10 +1,4 @@
 // Helpers
-.page {
-  position: relative;
-  flex: 1 0 auto;
-  overflow-x: hidden;
-}
-
 .container {
   max-width: $max-width + px;
   margin: 0 auto;
@@ -29,8 +23,8 @@
   }
 }
 
-.d-b {
-  display: block;
+.d-g {
+  display: grid;
 }
 
 .d-f {
@@ -61,10 +55,6 @@
   flex-wrap: wrap;
 }
 
-.d-g {
-  display: grid;
-}
-
 // Aspect ratio (pics)
 .ar-1-1,
 .ar-3-2,
@@ -80,7 +70,7 @@
     content: "";
   }
 
-  &>img {
+  & > img {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,12 +89,6 @@
 .ar-3-2 {
   &::after {
     padding-top: calc((2 / 3) * 100%);
-  }
-
-  @include respond(max-xs) {
-    &::after {
-      // padding-top: calc((3 / 4) * 100%);
-    }
   }
 }
 

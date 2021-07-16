@@ -210,7 +210,8 @@
       font-size: 25px;
     }
 
-    &__menu {
+    &__menu,
+    &__menu.fixed {
       padding: 15px 0;
     }
   }

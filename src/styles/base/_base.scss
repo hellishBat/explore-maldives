@@ -1,6 +1,6 @@
 // Base
 :root {
-  --vh: 100vh;
+  --dynamic-vh: 100vh;
   --container-mxw: 1200px;
   --gap: 30px;
   --swiper-pagination-color: #52dae6;
@@ -64,6 +64,11 @@ body {
   }
 }
 
+main {
+  flex: 1 0 auto;
+  min-height: 100%;
+}
+
 ul,
 li {
   margin: 0;
@@ -89,4 +94,5 @@ svg {
 
 ::selection {
   background-color: $primary-accent;
+  color: $white;
 }
